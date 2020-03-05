@@ -37,6 +37,9 @@ let isPyramidWord = function(word) {
   
   // Sort counts into array.
   let values = [...characterMap.values()].sort()
+  
+  // First count value must be 1.
+  if (values[0] != 1) return false
 
   // Check if each count increases by one.
   result = values.every((element, index, array) => { 
@@ -67,21 +70,25 @@ app.get("/pyramid", (request, response) => {
 // Some lightweight tests...
 app.get("/test", (request, response) => {
   try {
+    // First count must be 1
+    if (isPyramidWord('122333') != true) throw("122333 not true")
+    if (isPyramidWord('22333') != false) throw("22333 not true")
+    
+    
     // Without gaps
     if (isPyramidWord('banana') != true) throw("banana not true")
-    if (isPyramidWord('aaaaaa') != true) throw("aaaaaa not true")
-    if (isPyramidWord('22333444455555') != true) throw("22333444455555 not true")
+    if (isPyramidWord('122333444455555') != true) throw("122333444455555 not true")
 
     // With gaps
-    if (isPyramidWord('33355555') != false) throw("33355555 not false")
+    if (isPyramidWord('1224444') != false) throw("1224444 not false")
     if (isPyramidWord('bananaa') != false) throw("bananaa not false")
     
     // Empty
     if (isPyramidWord('') != false) throw("empty not false")
 
     // With same character counts
-    if (isPyramidWord('111222') != false) throw("111222 not false")
-    if (isPyramidWord('aaabbbccc') != false) throw("aaabbbccc not false")
+    if (isPyramidWord('12') != false) throw("12 not false")
+    if (isPyramidWord('abc') != false) throw("abc not false")
 
     // Consider single character pyramid
     if (isPyramidWord('a') != true) throw("a not true")
