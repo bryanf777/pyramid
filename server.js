@@ -74,7 +74,6 @@ app.get("/test", (request, response) => {
     if (isPyramidWord('122333') != true) throw("122333 not true")
     if (isPyramidWord('22333') != false) throw("22333 not true")
     
-    
     // Without gaps
     if (isPyramidWord('banana') != true) throw("banana not true")
     if (isPyramidWord('122333444455555') != true) throw("122333444455555 not true")
