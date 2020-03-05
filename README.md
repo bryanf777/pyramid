@@ -9,4 +9,4 @@ bandana is not a pyramid word because you have 1 'b' and 1 'd'.
 [`https://numerous-blushing-hub.glitch.me/pyramid?word=banana`](https://numerous-blushing-hub.glitch.me/pyramid?word=banana)
 
 ## Returns
-``{ "isPyramidWord": true }``
+``{ "is_pyramid_word": true }``
