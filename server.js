@@ -63,7 +63,7 @@ app.get("/pyramid", (request, response) => {
   if (typeof request.query.word === 'undefined') {
     response.redirect('/')
   } else {
-    response.json({"isPyramidWord" : isPyramidWord(request.query.word)})
+    response.json({"is_pyramid_word" : isPyramidWord(request.query.word)})
   }
 })
 
